@@ -13,18 +13,17 @@ import Home from './pages/Home/Home.jsx'
 import About from './pages/About/About.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Home />} />
+          <Route path="/portfolio/about" element={<About />} />
           {/*<Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} /> */}
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/portfolio" />} />
         </Routes>
       </BrowserRouter>
       <Footer />

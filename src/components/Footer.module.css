@@ -1,8 +1,18 @@
+/* Estilo para o rodapé */
 .footer {
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #edf3f6;
+  background-color: #333; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+}
+
+/* Estilo para os links dentro do rodapé */
+.footer a {
+  color: #fff; /* Cor do link */
+  text-decoration: none; /* Remover sublinhado do link */
+}
+
+/* Efeito de hover para os links do rodapé */
+.footer a:hover {
+  text-decoration: underline; /* Sublinhar o link quando o mouse estiver sobre ele */
 }

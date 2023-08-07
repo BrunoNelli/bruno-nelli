@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, HashRouter } from 'react-router-dom'
 
 import './App.css'
 
@@ -16,17 +16,17 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <NavBar />
         <Routes>
-          <Route path="/portfolio" element={<Home />} />
-          <Route path="/portfolio/about" element={<About />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           {/*<Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} /> */}
-          <Route path="*" element={<Navigate to="/portfolio" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </BrowserRouter>
-      <Footer />
+        <Footer />
+      </HashRouter>
     </>
   )
 }

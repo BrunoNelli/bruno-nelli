@@ -7,7 +7,7 @@ import gitHubLogo from './../../../src/assets/github.svg'
 
 const Home = () => {
   return (
-    <div className={styles.body}>
+    <div>
       <h1>Home</h1>
       <p>Portóflio desenvolvido com Vite + React + Github Pages</p>
       <div>

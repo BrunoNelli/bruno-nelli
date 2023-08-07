@@ -1,14 +1,3 @@
 .read_the_docs {
   color: #888;
 }
-
-.body {
-  background-color: #edf3f1cb;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  min-width: 100vh;
-  margin: 0px;
-}

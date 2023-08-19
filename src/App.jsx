@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 // Pages
 import Home from './pages/Home/Home.jsx'
 import About from './pages/About/About.jsx'
+import Career from './pages/Career/Career.jsx'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/career" element={<Career />} />
           {/*<Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} /> */}
           <Route path="*" element={<Navigate to="/" />} />

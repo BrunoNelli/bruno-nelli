@@ -13,6 +13,9 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink to="/about" className={({isActive}) => (isActive ? styles.active : '')}>Sobre</NavLink>
+        </li>        
+        <li>
+          <NavLink to="/career" className={({isActive}) => (isActive ? styles.active : '')}>Carreira Profissional</NavLink>
         </li>
       </ul>
     </nav>

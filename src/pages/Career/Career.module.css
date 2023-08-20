@@ -1,0 +1,17 @@
+.timeline {
+  background-color: #3da3d5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: rgb(53, 53, 53);
+}
+
+.timeline_title {
+  font-size: 15em;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.h3 {
+  padding-top: 0.25em;
+}
+

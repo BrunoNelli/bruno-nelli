@@ -15,7 +15,7 @@ const NavBar = () => {
           <NavLink to="/about" className={({isActive}) => (isActive ? styles.active : '')}>Sobre</NavLink>
         </li>        
         <li>
-          <NavLink to="/career" className={({isActive}) => (isActive ? styles.active : '')}>Carreira Profissional</NavLink>
+          <NavLink to="/career" className={({isActive}) => (isActive ? styles.active : '')}>Carreira</NavLink>
         </li>
       </ul>
     </nav>

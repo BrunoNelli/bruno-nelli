@@ -1,69 +1,51 @@
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+// Ícones
+import { ReactComponent as WorkIcon } from '../../assets/work.svg';
+import { ReactComponent as SchoolIcon } from '../../assets/school.svg';
 
-import IconVrBeneficios from '../../components/IconVrBeneficios';
-import IconIbm from '../../components/IconIbm';
-import IconYaman from '../../components/IconYaman';
-import IconTechMahindra from '../../components/IconTechMahindra';
+// Dados
+import timelineElements from '../../timelineElements';
+
+// Componentes
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
+
+// Estilos
+import 'react-vertical-timeline-component/style.min.css';
+import styles from './Career.module.css';
 
 const Career = () => {
+  let workIconStyles = { background: "#06D6A0" };
+  let schoolIconStyles = { background: "#f9c74f" };
   return (
-    <VerticalTimeline>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2021 - Atual"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    icon={<IconVrBeneficios />}
-  >
-    <h3 className="vertical-timeline-element-title">Especialista de Sistemas</h3>
-    <h4 className="vertical-timeline-element-subtitle">São Paulo, SP</h4>
-    <p>
-      Software Developer Engineer in Test
-    </p>
-    <h5>Especialista em sistemas com experiência em qualidade de software. Meu objetivo é ferramentar e capacitar analistas de qualidade, trabalhando com automação de testes utilizando linguagem de programação Ruby para testes de backend, Cypress para testes de frontend e Appium para testes mobile. Também realizo manutenção de pipelines do Jenkins em Groovy. Meu papel também envolve a identificação e implementação de novos frameworks e ferramentas de automação de testes funcionais e de performance, carga e stress em nossa empresa. Além disso, minha missão é guiar os analistas de qualidade em quaisquer dúvidas relacionadas à automação de testes.</h5>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="2020 - 2021"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    icon={<IconIbm />}
-  >
-    <h3 className="vertical-timeline-element-title">Analista de Qualidade Sênior</h3>
-    <h4 className="vertical-timeline-element-subtitle">São Paulo, Brasil</h4>
-    <p>
-      Testes de Carga, Performance e Stress
-    </p>
-    <h5>Avaliar demandas de alto volume de usuários, desenvolvendo scripts em Loadrunner e análise via Dynatrace</h5>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="2019 - 2020"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    icon={<IconYaman />}
-  >
-    <h3 className="vertical-timeline-element-title">Analista de Qualidade Pleno</h3>
-    <h4 className="vertical-timeline-element-subtitle">São Paulo, Brasil</h4>
-    <p>
-      Testes funcionais de API e UI
-    </p>
-    <h5>Analista de Qualidade dentro de Squad, responsável por automação de testes em Ruby para APIs e UI</h5>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="2017 - 2020"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    icon={<IconTechMahindra />}
-  >
-    <h3 className="vertical-timeline-element-title">Analista de Testes Júnior</h3>
-    <h4 className="vertical-timeline-element-subtitle">São Paulo, Brasil</h4>
-    <p>
-      Analista de testes funcionais e regressão
-    </p>
-    <h5>Realização de testes manuais, utilizando SQL, Ferramentas internas do Cliente e QC ALM</h5>
-  </VerticalTimelineElement>
-</VerticalTimeline>
+    <div className={styles.timeline}>
+      {/* <h1 className={styles.timeline_title}>Timeline</h1> */}
+      <VerticalTimeline>
+        {timelineElements.map((element) => {
+            let isWorkIcon = element.icon === "work";
+            let showButton = 
+              element.buttonText !== undefined &&
+              element.buttonText !== null &&
+              element.buttonText !== "";
+
+            return (
+              <VerticalTimelineElement
+                key={element.key}
+                date={element.date}
+                dateClassName="date"
+                iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
+                icon={isWorkIcon ? <WorkIcon /> : <SchoolIcon />}
+              >
+                <h3 className='vertical-timeline-element-title'>{element.title}</h3>
+                <h5 className='vertical-timeline-element-subtitle'>{element.location}</h5>
+                <p id="description">{element.description}</p>
+                {showButton && (<a className={`button ${isWorkIcon ? "workButton" : "schoolButton"}`} href="/">{element.buttonText}</a>)}
+              </VerticalTimelineElement>
+          );
+        })}
+      </VerticalTimeline>
+    </div>
   )
 }
 
